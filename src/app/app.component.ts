@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import ButtonComponent from './shared/button/button.component';
-import SettingsIconComponent from './shared/icons/settings-icon/settings-icon.component';
-import UserIconComponent from './shared/icons/user-icon/user-icon.component';
+import HeaderComponent from './header/header.component';
+import SearchItemComponent from './search/search-item/search-item.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ButtonComponent, SettingsIconComponent, UserIconComponent],
+  imports: [
+    HeaderComponent,
+    SearchItemComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
