@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="search-block">
+    <img class="logo" src="assets/logo.png" alt="logo">
+    <form (ngSubmit)="onSubmit()">
+      <input type="search">
+      <app-button variant="primary" type="submit">search</app-button>
+    </form>
+    <app-button variant="icon-button">
+      <app-settings-icon (click)="onChangeSetting()"/>
+    </app-button>
+  </div>
+
+  <div class="user-profile-block">
+    <span>Your name</span>
+    <app-button variant="icon-button">
+      <app-user-icon/>
+    </app-button>
+  </div>
+</header>
+
+@if (isOpenSettingMenu) {
+  <menu>
+    <li>date</li>
+    <li>count of views</li>
+    <li>
+      by word or sentence
+      <input type="text">
+    </li>
+  </menu>
+}

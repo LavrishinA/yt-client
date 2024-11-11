@@ -1,0 +1,45 @@
+@use "../../styles/colors";
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  color: colors.$text;
+  background-color: colors.$primary;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  animation: ease-in;
+  transition: all .1s;
+  box-shadow: 2px 0 4px 0 #2f80ed;
+
+  &.primary {
+    padding: 0.5rem 1.5rem;
+  }
+
+  &.icon-button {
+    padding: 0.25rem;
+  }
+
+  &:hover {
+    background-color: colors.$hover;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:disabled {
+    background-color: colors.$disabled;
+    color: colors.$font-disabled;
+    box-shadow: none;
+
+    &:active {
+      transform: none;
+    }
+  }
+}
+
