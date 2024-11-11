@@ -1,0 +1,13 @@
+main {
+  max-width: 90rem;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+section {
+  padding: 1.5rem 7.5rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}

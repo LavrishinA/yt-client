@@ -1,2 +1,7 @@
-<app-header></app-header>
-<app-search-item/>
+<app-header (isSubmitted)="onSubmit()"></app-header>
+@if (isSearchComplete) {
+  <app-search-result/>
+} @else {
+  <p style="text-align: center">Submit search form</p>
+}
+

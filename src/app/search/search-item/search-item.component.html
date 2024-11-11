@@ -1,1 +1,25 @@
-<p>search-item works!</p>
+<div class="search-item" [ngClass]="setBorderClass(itemData.snippet.publishedAt)">
+  <img src="{{itemData.snippet.thumbnails.high.url}}" alt="">
+  <ul>
+    <li>
+      <app-view-counts-icon/>
+      {{ itemData.statistics.viewCount }}
+    </li>
+    <li>
+      <app-like-icon/>
+      {{ itemData.statistics.likeCount }}
+    </li>
+    <li>
+      <app-dislike-count-icon/>
+      {{ itemData.statistics.dislikeCount }}
+    </li>
+    <li>
+      <app-comment-count-icon/>
+      {{ itemData.statistics.commentCount }}
+    </li>
+  </ul>
+  <h2>{{ itemData.snippet.title }}</h2>
+  <div>
+    <app-button variant="primary">more...</app-button>
+  </div>
+</div>
