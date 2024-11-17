@@ -1,6 +1,6 @@
 @use "../../styles/colors";
 
-button {
+:host {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,11 +16,11 @@ button {
   transition: all .1s;
   box-shadow: 2px 0 4px 0 #2f80ed;
 
-  &.primary {
+  & .primary {
     padding: 0.5rem 1.5rem;
   }
 
-  &.icon-button {
+  & .icon-button {
     padding: 0.25rem;
   }
 

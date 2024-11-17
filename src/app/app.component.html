@@ -1,6 +1,10 @@
-<app-header (isSubmitted)="onSubmit()"></app-header>
+<app-header (isSubmitted)="onSubmit()"
+            (sortParams)="sortData($event)"
+            (changeSearchTerm)="searchTerm = $event">
+
+</app-header>
 @if (isSearchComplete) {
-  <app-search-result/>
+  <app-search-result [searchResultItems]="data" [searchTerm]="searchTerm"/>
 } @else {
   <p style="text-align: center">Submit search form</p>
 }

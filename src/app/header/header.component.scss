@@ -53,5 +53,17 @@ menu {
     list-style: none;
     color: colors.$primary;
     font-size: 0.75rem;
+
+    & button {
+      border: none;
+      color: inherit;
+      background-color: inherit;
+      cursor: pointer;
+
+    }
   }
+}
+
+.active {
+  text-decoration: underline;
 }

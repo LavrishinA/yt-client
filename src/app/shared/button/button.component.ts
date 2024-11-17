@@ -3,7 +3,8 @@ import { NgClass } from '@angular/common';
 
 @Component({
 
-  selector: 'app-button',
+  // eslint-disable-next-line @angular-eslint/component-selector
+  selector: 'button[appButton], a[appButton]',
   standalone: true,
   imports: [
     NgClass,
