@@ -1,0 +1,27 @@
+@use "../../../styles/colors";
+
+menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+
+  & li {
+    list-style: none;
+    color: colors.$primary;
+    font-size: 0.75rem;
+
+    & button {
+      border: none;
+      color: inherit;
+      background-color: inherit;
+      cursor: pointer;
+
+    }
+  }
+}
+
+.active {
+  text-decoration: underline;
+}
