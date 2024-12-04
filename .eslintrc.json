@@ -36,6 +36,15 @@
             "prefix": "app",
             "style": "kebab-case"
           }
+        ],
+        "no-underscore-dangle": [
+          "error",
+          {
+            "allow": [],
+            "allowAfterThis": true,
+            "allowAfterSuper": false,
+            "enforceInMethodNames": false
+          }
         ]
       }
     },

@@ -1,0 +1,23 @@
+<header class="header">
+  <div class="search-block">
+    <img class="logo" src="../../../../assets/logo.png" alt="logo">
+    <form (ngSubmit)="{}">
+      <input type="search">
+      <button appButton variant="primary" type="submit">search</button>
+    </form>
+    <button appButton variant="icon-button" (click)="onChangeSetting()">
+      <app-settings-icon/>
+    </button>
+  </div>
+
+  <div class="user-profile-block">
+    <span>Your name</span>
+    <button appButton variant="icon-button">
+      <app-user-icon/>
+    </button>
+  </div>
+</header>
+
+@if (isOpenSettingMenu) {
+  <ng-container [ngTemplateOutlet]=" settings().template"></ng-container>
+}
