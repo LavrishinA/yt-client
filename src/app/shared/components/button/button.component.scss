@@ -1,4 +1,4 @@
-@use "../../styles/colors";
+@use "../../../styles/colors";
 
 :host {
   display: flex;
@@ -13,8 +13,8 @@
   border: none;
   cursor: pointer;
   animation: ease-in;
-  transition: all .1s;
-  box-shadow: 2px 0 4px 0 #2f80ed;
+  transition: all .2s;
+
 
   & .primary {
     padding: 0.5rem 1.5rem;
@@ -26,6 +26,7 @@
 
   &:hover {
     background-color: colors.$hover;
+    box-shadow: 2px 0 4px 0 #2f80ed;
   }
 
   &:active {

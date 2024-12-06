@@ -1,4 +1,4 @@
-<div class="search-item" [ngClass]="setBorderClass(itemData.snippet.publishedAt)">
+<div class="search-item" [appColoredBorder]="itemData.snippet.publishedAt">
   <img src="{{itemData.snippet.thumbnails.high.url}}" alt="">
   <ul>
     <li>
