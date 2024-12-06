@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 
 import SearchItemComponent from '../search-item/search-item.component';
-import { YouTubeSearchResponse } from '../search-response.model';
-import FindByWordPipe from '../pipe/find-by-word.pipe';
+import { YouTubeSearchResponse } from '../../model/search-response.model';
+import FindByWordPipe from '../../pipe/find-by-word.pipe';
 
 @Component({
   selector: 'app-search-result',

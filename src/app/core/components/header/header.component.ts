@@ -20,11 +20,17 @@ import TemplateRefDirective from '../../../shared/directive/template-ref.directi
   styleUrl: './header.component.scss',
 })
 export default class HeaderComponent {
+  searchKey: string = '';
+
   settings = contentChild.required(TemplateRefDirective);
 
   isOpenSettingMenu: boolean = false;
 
   onChangeSetting() {
     this.isOpenSettingMenu = !this.isOpenSettingMenu;
+  }
+
+  onSubmit() {
+
   }
 }

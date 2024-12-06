@@ -11,6 +11,6 @@
   </li>
   <li>
     by word or sentence
-    <input type="text" [ngModel]="settings.searchTerm" (ngModelChange)="settings.searchTerm = $event">
+    <input type="text" [ngModel]="settingsService.searchTerm()" (ngModelChange)="settingsService.setSearchTerm($event)">
   </li>
 </menu>

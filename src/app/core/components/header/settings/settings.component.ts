@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import HeaderService from '../../../services/header.service';
+import SettingsService from '../../../services/settings.service';
 
 @Component({
   selector: 'app-settings',
@@ -12,11 +12,11 @@ import HeaderService from '../../../services/header.service';
   styleUrl: './settings.component.scss',
 })
 export default class SettingsComponent {
-  settings = inject(HeaderService);
+  settingsService = inject(SettingsService);
 
-  currentField = this.settings.currentField;
+  currentField = this.settingsService.currentField;
 
   onChangeSortParams(field: 'publishedAt' | 'likeCount') {
-    this.settings.changeSortParams(field);
+    this.settingsService.changeSortParams(field);
   }
 }

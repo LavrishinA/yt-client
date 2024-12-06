@@ -3,7 +3,5 @@
     @for (item of searchResultItems.items | findByWord: searchTerm; track item.id) {
       <app-search-item [itemData]="item"/>
     }
-
-
   </section>
 </main>

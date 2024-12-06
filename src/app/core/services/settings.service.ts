@@ -3,7 +3,7 @@ import { Injectable, signal } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export default class HeaderService {
+export default class SettingsService {
   private _sortDirection = signal<'asc' | 'desc'>('asc');
 
   private _currentField = signal<'publishedAt' | 'likeCount' | null>(null);
@@ -19,11 +19,11 @@ export default class HeaderService {
   }
 
   get searchTerm() {
-    return this._searchTerm();
+    return this._searchTerm.asReadonly();
   }
 
-  set searchTerm(searchTerm: string) {
-    this._searchTerm.set(searchTerm);
+  setSearchTerm(value: string) {
+    this._searchTerm.set(value);
   }
 
   changeSortParams(field: 'publishedAt' | 'likeCount') {
