@@ -1,4 +1,6 @@
-import { Component, contentChild, output } from '@angular/core';
+import {
+  Component, contentChild, EventEmitter, Output,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgTemplateOutlet } from '@angular/common';
 import ButtonComponent from '../../../shared/components/button/button.component';
@@ -20,9 +22,7 @@ import TemplateRefDirective from '../../../shared/directive/template-ref.directi
   styleUrl: './header.component.scss',
 })
 export default class HeaderComponent {
-  searchKey: string = '';
-
-  currentField = output< 'publishedAt' | 'likeCount'>();
+  @Output() formSubmitted = new EventEmitter<void>();
 
   settings = contentChild.required(TemplateRefDirective);
 
@@ -33,8 +33,6 @@ export default class HeaderComponent {
   }
 
   onSubmit() {
-
+    this.formSubmitted.emit();
   }
-
-  protected readonly contentChild = contentChild;
 }

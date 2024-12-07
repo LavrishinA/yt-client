@@ -16,9 +16,13 @@ export default class FilterComponent {
     sortDirection: 'asc' | 'desc'
   }>();
 
+  @Output() filterTerm = new EventEmitter<string>();
+
   selectedField: 'publishedAt' | 'likeCount' = 'publishedAt';
 
   sortDirection: 'asc' | 'desc' = 'asc';
+
+  filterTermValue: string = '';
 
   setSortParams(field: 'publishedAt' | 'likeCount') {
     if (this.selectedField !== field) {
@@ -30,5 +34,9 @@ export default class FilterComponent {
     this.filterParams.emit(
       { selectedField: this.selectedField, sortDirection: this.sortDirection },
     );
+  }
+
+  onChangeFilterTerm(term: string) {
+    this.filterTerm.emit(term);
   }
 }

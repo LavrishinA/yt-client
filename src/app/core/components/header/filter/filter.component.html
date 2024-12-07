@@ -9,8 +9,8 @@
       views
     </button>
   </li>
-<!--  <li>-->
-<!--    by word or sentence-->
-<!--    <input type="text" [(ngModel)]="sortTerm">-->
-<!--  </li>-->
+  <li>
+    by word or sentence
+    <input type="text" [(ngModel)]="filterTermValue" (ngModelChange)="onChangeFilterTerm($event)">
+  </li>
 </menu>

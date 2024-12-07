@@ -2,11 +2,11 @@
   <div class="search-block">
     <img class="logo" src="../../../../assets/logo.png" alt="logo">
     <form (ngSubmit)="onSubmit()">
-      <input type="search" [(ngModel)]="searchKey" name="serchKey">
+      <input type="search" name="searchKey">
       <button appButton variant="primary" type="submit">search</button>
     </form>
     <button appButton variant="icon-button" (click)="onChangeSetting()">
-     <app-filter-icon/>
+      <app-filter-icon/>
     </button>
   </div>
 
@@ -19,5 +19,5 @@
 </header>
 
 @if (isOpenSettingMenu) {
-  <ng-container [ngTemplateOutlet]=" settings().template" ></ng-container>
+  <ng-container [ngTemplateOutlet]="settings().template"></ng-container>
 }

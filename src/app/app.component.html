@@ -1,11 +1,13 @@
-<app-header >
-  <app-filter *appTemplateRef  (filterParams) = "logger($event)"/>
+<app-header (formSubmitted)="searchService.getData()">
+  <ng-template appTemplateRef>
+    <app-filter (filterParams)="onSortParamsChanged($event)" (filterTerm)="{}"/>
+  </ng-template>
 </app-header>
-<!--@if (isSearchComplete) {-->
-<!--  <app-search-result [searchResultItems]="data" [searchTerm]="searchTerm"/>-->
-<!--} @else {-->
-<!--  <p style="text-align: center">Submit search form</p>-->
-<!--}-->
+@if (searchResultData().items?.length ) {
+  <app-search-result [searchResultItems]="searchResultData()" [searchTerm]="'a'"/>
+} @else {
+  <p style="text-align: center">Submit search form</p>
+}
 
 
 
