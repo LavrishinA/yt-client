@@ -1,0 +1,16 @@
+<menu>
+  <li>
+    <button [class.active]="selectedField === 'publishedAt'" (click)="setSortParams('publishedAt')">
+      date
+    </button>
+  </li>
+  <li>
+    <button [class.active]="selectedField === 'likeCount'" (click)="setSortParams('likeCount')">count of
+      views
+    </button>
+  </li>
+<!--  <li>-->
+<!--    by word or sentence-->
+<!--    <input type="text" [(ngModel)]="sortTerm">-->
+<!--  </li>-->
+</menu>

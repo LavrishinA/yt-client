@@ -1,4 +1,4 @@
-import { Component, contentChild } from '@angular/core';
+import { Component, contentChild, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgTemplateOutlet } from '@angular/common';
 import ButtonComponent from '../../../shared/components/button/button.component';
@@ -22,6 +22,8 @@ import TemplateRefDirective from '../../../shared/directive/template-ref.directi
 export default class HeaderComponent {
   searchKey: string = '';
 
+  currentField = output< 'publishedAt' | 'likeCount'>();
+
   settings = contentChild.required(TemplateRefDirective);
 
   isOpenSettingMenu: boolean = false;
@@ -33,4 +35,6 @@ export default class HeaderComponent {
   onSubmit() {
 
   }
+
+  protected readonly contentChild = contentChild;
 }

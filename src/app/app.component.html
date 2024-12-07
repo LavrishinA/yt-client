@@ -1,5 +1,5 @@
-<app-header>
-  <app-settings *appTemplateRef/>
+<app-header >
+  <app-filter *appTemplateRef  (filterParams) = "logger($event)"/>
 </app-header>
 <!--@if (isSearchComplete) {-->
 <!--  <app-search-result [searchResultItems]="data" [searchTerm]="searchTerm"/>-->
@@ -7,7 +7,5 @@
 <!--  <p style="text-align: center">Submit search form</p>-->
 <!--}-->
 
-
-  <app-search-result [searchResultItems]="data()" [searchTerm]="searchService.searchTerm()"/>
 
 

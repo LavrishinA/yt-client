@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: ' app-settings-icon',
+  selector: ' app-filter-icon',
   standalone: true,
   imports: [],
   templateUrl: './settings-icon.component.html',

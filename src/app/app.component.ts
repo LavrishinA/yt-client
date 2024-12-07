@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import HeaderComponent from './core/components/header/header.component';
 import SearchResultComponent from './search/components/search-result/search-result.component';
 
-import SettingsComponent from './core/components/header/settings/settings.component';
+import SettingsComponent from './core/components/header/filter/filter.component';
 import TemplateRefDirective from './shared/directive/template-ref.directive';
 import SearchService from './search/services/search.service';
 
@@ -21,7 +21,25 @@ import SearchService from './search/services/search.service';
 export default class AppComponent {
   title = 'yt-client';
 
-  searchService = inject(SearchService);
+  logger(event: any) {
+    console.log(event);
+  }
 
-  data = this.searchService.filteredResultData;
+  // sortData(fparams: { direction: 'asc' | 'desc', field: 'publishedAt' | 'likeCount' }) {
+  //   let sortedItems;
+  //   if (params.field === 'likeCount') {
+  //     // eslint-disable-next-line max-len
+  //     sortedItems = this.data.items.sort((a, b) => Number(b.statistics.likeCount) - Number(a.statistics.likeCount));
+  //   }
+  //   if (params.field === 'publishedAt') {
+  //     // eslint-disable-next-line max-len
+  //     sortedItems = this.data.items.sort((a, b) => new Date(b.snippet.publishedAt).getTime() - new Date(a.snippet.publishedAt).getTime());
+  //   }
+  //   if (sortedItems) {
+  //     this.data = {
+  //       ...this.data,
+  //       items: params.direction === 'asc' ? [...sortedItems] : [...sortedItems.reverse()],
+  //     };
+  //   }
+  // }
 }
