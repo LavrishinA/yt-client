@@ -1,10 +1,10 @@
 <app-header (formSubmitted)="searchService.getData()">
   <ng-template appTemplateRef>
-    <app-filter (filterParams)="onSortParamsChanged($event)" (filterTerm)="{}"/>
+    <app-filter (filterParams)="onSortParamsChanged($event)" (filterTerm)="onFilterTermChanged($event)"/>
   </ng-template>
 </app-header>
 @if (searchResultData().items?.length ) {
-  <app-search-result [searchResultItems]="searchResultData()" [searchTerm]="'a'"/>
+  <app-search-result [searchResultItems]="searchResultData()" [filterTerm]="searchService.filterTerm()"/>
 } @else {
   <p style="text-align: center">Submit search form</p>
 }

@@ -1,6 +1,6 @@
 <main>
   <section>
-    @for (item of searchResultItems.items | findByWord: searchTerm; track item.id) {
+    @for (item of searchResultItems.items | findByWord: filterTerm; track item.id) {
       <app-search-item [itemData]="item"/>
     }
   </section>

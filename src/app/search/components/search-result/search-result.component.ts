@@ -17,5 +17,5 @@ import FindByWordPipe from '../../pipe/find-by-word.pipe';
 export default class SearchResultComponent {
   @Input({ required: true }) searchResultItems!: YouTubeSearchResponse;
 
-  @Input({ required: true }) searchTerm!: string;
+  @Input({ required: true }) filterTerm!: string;
 }

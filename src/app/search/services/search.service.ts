@@ -8,30 +8,35 @@ import data from '../response.json';
 export default class SearchService {
   private searchResult = signal<YouTubeSearchResponse>({} as YouTubeSearchResponse);
 
+  private filterTermValue = signal<string>('');
+
   searchResultData = this.searchResult.asReadonly();
+
+  filterTerm = this.filterTermValue.asReadonly();
 
   getData() {
     this.searchResult.set(data);
   }
 
+  setFilterTerm(term: string) {
+    this.filterTermValue.set(term);
+  }
+
   sortData(params: { selectedField: 'publishedAt' | 'likeCount'; sortDirection: 'asc' | 'desc' }) {
     const originalItems = this.searchResult().items;
-    const sortedItems = [...originalItems];
+    const itemsToSort = [...originalItems];
 
     if (params.selectedField === 'likeCount') {
-      sortedItems.sort((a, b) => Number(b.statistics.likeCount) - Number(a.statistics.likeCount));
+      itemsToSort.sort((a, b) => Number(b.statistics.likeCount) - Number(a.statistics.likeCount));
     } else if (params.selectedField === 'publishedAt') {
       // eslint-disable-next-line max-len
-      sortedItems.sort((a, b) => new Date(b.snippet.publishedAt).getTime() - new Date(a.snippet.publishedAt).getTime());
+      itemsToSort.sort((a, b) => new Date(b.snippet.publishedAt).getTime() - new Date(a.snippet.publishedAt).getTime());
     }
 
     if (params.sortDirection === 'asc') {
-      sortedItems.reverse();
+      itemsToSort.reverse();
     }
 
-    this.searchResult.set({
-      ...this.searchResult(),
-      items: sortedItems,
-    });
+    this.searchResult.update((prev) => ({ ...prev, items: itemsToSort }));
   }
 }

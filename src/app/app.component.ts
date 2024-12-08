@@ -27,4 +27,8 @@ export default class AppComponent {
   onSortParamsChanged(params: { selectedField: 'publishedAt' | 'likeCount'; sortDirection: 'asc' | 'desc' }) {
     this.searchService.sortData(params); // Get sorted data
   }
+
+  onFilterTermChanged(term: string) {
+    this.searchService.setFilterTerm(term);
+  }
 }
