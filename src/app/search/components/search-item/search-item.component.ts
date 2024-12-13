@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Item } from '../../model/search-item.model';
 import ViewCountsComponent from '../../../shared/components/icons/view-counts-icon/view-counts.component';
 import LikeIconComponent from '../../../shared/components/icons/like-icon/like-icon.component';
@@ -18,6 +19,7 @@ import ColoredBorderDirective from '../../../shared/directive/colored-border.dir
     CommentCountIconComponent,
     ButtonComponent,
     ColoredBorderDirective,
+    RouterLink,
   ],
   templateUrl: './search-item.component.html',
   styleUrl: './search-item.component.scss',

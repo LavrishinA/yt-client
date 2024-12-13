@@ -1,5 +1,5 @@
 <div class="search-item" [appColoredBorder]="itemData.snippet.publishedAt">
-  <img src="{{itemData.snippet.thumbnails.high.url}}" alt="">
+  <img src="{{itemData.snippet.thumbnails.medium.url}}" alt="">
   <ul>
     <li>
       <app-view-counts-icon/>
@@ -20,6 +20,6 @@
   </ul>
   <h2>{{ itemData.snippet.title }}</h2>
   <div>
-    <a appButton href="#" variant="primary">more...</a>
+    <a appButton [routerLink]="['detail', itemData.id]" variant="primary">more...</a>
   </div>
 </div>
