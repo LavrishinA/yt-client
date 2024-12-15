@@ -1,7 +1,5 @@
-<main>
-  <section>
+<div class="container">
     @for (item of searchResultItems.items | findByWord: filterTerm; track item.id) {
       <app-search-item [itemData]="item"/>
     }
-  </section>
-</main>
+</div>

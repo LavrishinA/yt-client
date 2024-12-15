@@ -1,0 +1,7 @@
+<section>
+  @if (searchResultData().items?.length) {
+    <app-search-result [searchResultItems]="searchResultData()" [filterTerm]="searchService.filterTerm()"/>
+  } @else {
+    <p style="text-align: center">Submit search form</p>
+  }
+</section>

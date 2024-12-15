@@ -22,6 +22,11 @@ export default class SearchService {
     this.filterTermValue.set(term);
   }
 
+  getSearchItemDetail(id: string) {
+    if (!this.searchResultData().items) return null;
+    return this.searchResult()?.items.find((item) => item.id === id);
+  }
+
   sortData(params: { selectedField: 'publishedAt' | 'likeCount'; sortDirection: 'asc' | 'desc' }) {
     const originalItems = this.searchResult().items;
     const itemsToSort = [...originalItems];

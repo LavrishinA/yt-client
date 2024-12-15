@@ -1,0 +1,10 @@
+<app-header (formSubmitted)="searchService.getData()">
+  <ng-template appTemplateRef>
+    <app-filter (filterParams)="onSortParamsChanged($event)" (filterTerm)="onFilterTermChanged($event)"/>
+  </ng-template>
+</app-header>
+<main>
+  <router-outlet/>
+</main>
+
+
