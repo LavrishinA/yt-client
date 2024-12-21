@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import LayoutComponent from './core/layout/layout.component';
 import MainPageComponent from './search/pages/main-page/main-page.component';
-import SearchDetailComponent from './search/components/search-detail/search-detail.component';
+import DetailPageComponent from './search/pages/detail-page/detail-page.component';
 
 const routes: Routes = [
   {
@@ -12,9 +12,10 @@ const routes: Routes = [
         path: 'main',
         component: MainPageComponent,
       },
-      { path: 'detail/:id', component: SearchDetailComponent },
+      { path: 'detail/:id', component: DetailPageComponent },
     ],
   },
+  { path: '**', component: NotFoundPage },
 ];
 
 export default routes;
