@@ -1,44 +1,37 @@
-@if (itemDetail) {
-  <a variant="icon-button" appButton routerLink="/main" class="back"><</a>
-  <article>
-    <div class="img-container">
-      <img [src]="itemDetail.snippet.thumbnails.high.url" alt="video cover">
+<article>
+  <div class="img-container">
+    <img [src]="itemDetail().snippet.thumbnails.high.url" alt="video cover">
+  </div>
+
+  <div class="text-container" [appColoredBorder]="itemDetail().snippet.publishedAt">
+    <div class="header">
+      <h2>{{ itemDetail().snippet.title }}</h2>
+      <time>{{ itemDetail().snippet?.publishedAt | date: 'fullDate' }}</time>
     </div>
-
-
-    <div class="text-container">
-      <div class="header">
-        <h2>{{ itemDetail.snippet.title }}</h2>
-        <time>{{ itemDetail?.snippet?.publishedAt | date: 'fullDate' }}</time>
-      </div>
-      <div class="text">
-        <span>Description:</span>
-        <p>{{ itemDetail.snippet.description }}</p>
-      </div>
-      <ul>
-        <li>
-          <app-view-counts-icon/>
-          {{ itemDetail.statistics.viewCount }}
-        </li>
-        <li>
-          <app-like-icon/>
-          {{ itemDetail.statistics.likeCount }}
-        </li>
-        <li>
-          <app-dislike-count-icon/>
-          {{ itemDetail.statistics.dislikeCount }}
-        </li>
-        <li>
-          <app-comment-count-icon/>
-          {{ itemDetail.statistics.commentCount }}
-        </li>
-      </ul>
+    <div class="text">
+      <span>Description:</span>
+      <p>{{ itemDetail().snippet.description }}</p>
     </div>
-  </article>
-} @else {
-  <p>No item details available.</p>
-}
-
+    <ul>
+      <li>
+        <app-view-counts-icon/>
+        {{ itemDetail().statistics.viewCount }}
+      </li>
+      <li>
+        <app-like-icon/>
+        {{ itemDetail().statistics.likeCount }}
+      </li>
+      <li>
+        <app-dislike-count-icon/>
+        {{ itemDetail().statistics.dislikeCount }}
+      </li>
+      <li>
+        <app-comment-count-icon/>
+        {{ itemDetail().statistics.commentCount }}
+      </li>
+    </ul>
+  </div>
+</article>
 
 
 

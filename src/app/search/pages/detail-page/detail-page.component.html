@@ -1,0 +1,7 @@
+@if (itemDetail) {
+  <a variant="icon-button" appButton routerLink="/main" class="back"><</a>
+  <app-search-detail [itemDetail]="itemDetail"/>
+} @else {
+  <p>No item details available.</p>
+}
+
