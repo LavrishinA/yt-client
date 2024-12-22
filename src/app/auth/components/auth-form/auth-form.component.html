@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit(login.value, password.value)">
+  <h2>Login</h2>
+  <p>
+    <label for="login" >login</label>
+    <input type="text" id="login" #login>
+  </p>
+  <p>
+    <label for="password" >password</label>
+    <input type="text" id="password" #password>
+  </p>
+
+  <button appButton variant="primary" type="submit">Login</button>
+</form>
